@@ -125,6 +125,7 @@
         <label>Estado:
         <input name="uf" type="text" id="uf" size="2" /></label><br />
         <input name="botao" type="submit" value="Salvar"></label><br />
+        <input name="botao" type="submit" value="Cancelar"></label><br />
       </form>
 </div>
 
