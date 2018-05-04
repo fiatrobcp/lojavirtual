@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     
     <style rel="stylesheet" type="text/css">
-    @import url("fontes.css");
+    @import url("main.css");
   </style>
 </head>
 <!-- Funcao Java Script para o CEP-->
@@ -130,5 +130,34 @@
 </div>
 
 </body>
+<?php
+include ('config.php');
+if(@$_REQUEST['botao'] == "Salvar")
+{
+    $nome = @$_POST['nome'];
+    $sbnome = @$_POST['sbnome'];
+    $fone = @$_POST['fone'];
+    $cep = @$_POST['cep'];
+    $rua = @$_POST['rua'];
+    $numero = @$_POST['numero'];
+    $bairro = @$_POST['bairro'];
+    $cidade = @$_POST['cidade'];
+    $uf = @$_POST['uf'];
 
+    // echo $nome;
+    // echo $sbnome;
+    // echo $fone;
+    // echo $cep;
+    // echo $rua;
+    // echo $numero;
+    // echo $bairro;
+    // echo $cidade;
+    // echo $uf;
+    
+$query= "INSERT INTO cliente (nome,sobrenome,fone,cep,rua,numero,bairro,cidade,uf) values('$nome','$sbnome','$fone','$cep','$rua','$numero','$bairro','$cidade','$uf')";
+$result=mysqli_query($con,$query);
+
+}
+
+?>
 </html>
