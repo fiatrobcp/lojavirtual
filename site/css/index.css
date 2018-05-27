@@ -1,0 +1,121 @@
+/*header*/
+.menu{width:100%;height:96px;float:left;background:#1e2024;box-shadow: 0px 2px 12px 0px rgba(51, 51, 51, 0.70);text-align:center;z-index: 1;position: relative;border-top: 6px solid #1c8adb;}
+.logo{width:80px;height:81px;display:inline-block;background:url(../img/menu/logo.png)no-repeat center top;background-size:100%;margin: 8px 0 0 10%;}
+
+/*main*/
+.menu-lateral{width:25%;height:100%;float:left;background:#1e2024;}
+.seletor{width:100%;height:80px;float:left;margin:20px 0;box-shadow: inset 0px 0px 2px 0px #1e2024;background:#1c8adb;font:14px latobold;color:#fff;}
+.seletor p{float:left;margin: 30px 0px;}
+.seletor:hover{color:#000;background:#eee;box-shadow:none;}
+.vetor-1{width:60px;height:60px;float:left;background:url(../img/menu-lateral/cadastro.png)no-repeat center top;background-size:100%;margin: 10px 35px;}
+.vetor-2{width:60px;height:60px;float:left;background:url(../img/menu-lateral/cadastro-produto.png)no-repeat center top;background-size:100%;margin: 10px 35px;}
+.vetor-3{width:60px;height:60px;float:left;background:url(../img/menu-lateral/estoque.png)no-repeat center top;background-size:100%;margin: 10px 35px;}
+.vetor-4{width:60px;height:60px;float:left;background:url(../img/menu-lateral/ponto-venda.png)no-repeat center top;background-size:100%;margin: 10px 35px;}
+.conteudo-1{width:75%;height:100%;float:left;text-align:center;overflow:auto;background:#f7f7f7;}
+.conteudo-2{width:75%;height:100%;float:left;background:#f7f7f7;overflow:auto;text-align:center;}
+.conteudo-3{width:75%;height:100%;float:left;overflow:auto;background:#f7f7f7;}
+.conteudo-4{width:75%;height:100%;float:left;background:#f7f7f7;overflow:auto;text-align:center;}
+
+
+.produto-estoque{width: 90%;float: left;margin: 40px 5%;}
+.img-produto{width:60px;height:60px;background:url(../img/estoque/1.png)no-repeat center top;background-size:100%;}
+.codigo{padding: 22px 15px;float:left;}
+.descricao{padding:22px 15px;float:left;}
+
+
+.table-estoque{font-family:latoregular;width: 90%;margin: 30px 0 30px 5%}
+.table-estoque td, th {border: 1px solid #000;text-align: left;}
+.table-estoque th{font-family:latobold;text-align:center;background:#636973;color:#fff;border:1px solid #000;}
+.table-estoque tr:nth-child(even) { background-color: #a0c6e2}
+.table-estoque p{padding: 21px 15px;text-align: center;}
+
+.seletor-img{box-shadow:none !important;width: 370px !important;margin: 5px 0px 9px 0 !important;}
+.vetor-seletor{width:30px;height:30px;float:left;background:url(../img/cadastro-produto/vetor-seletor.png)no-repeat center top;background-size:100%;}
+
+
+.formulario-footer-padrao-3 {width: 400px;display:inline-block;margin: 100px 0;overflow: auto}
+.formulario-footer-padrao-3 input{-webkit-appearance: none;float: left; margin: 0 16px 18px 0; padding: 0 0 0 10px; color: #000; height: 37px; width: 398px; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb;border-radius:5px;}
+.formulario-footer-padrao-3 textarea{-webkit-appearance: none;overflow: hidden; float: left; margin: 0 16px 18px 0; padding: 10px 0 0 10px; color: #000; height: 27px; width: 398px; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb !important;}
+.formulario-footer-padrao-3 button{ float: left; height: 42px; width: 200px; border: none; background:#1c8adb; box-shadow: inset 0px 0px 0px 1px #708090; font: 15px latobold;color:#fff;border-radius:5px;}
+.formulario-footer-padrao-3 button:hover{ background:rgb(32, 87, 128);}
+
+.formulario-footer-padrao-4 {width: 400px;display:inline-block;margin: 100px 0 0 0;overflow: auto;    box-shadow: 0px 0px 20px 1px;}
+.formulario-footer-padrao-4 input{-webkit-appearance: none;float: left; margin: 0 16px 18px 5%; padding: 0 0 0 10px; color: #fff; height: 37px; width: 90%; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb;border-radius:5px;}
+.formulario-footer-padrao-4 textarea{-webkit-appearance: none;overflow: hidden; float: left; margin: 0 16px 18px 0; padding: 10px 0 0 10px; color: #fff; height: 27px; width: 398px; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb !important;}
+.formulario-footer-padrao-4 button{ float: left; height: 42px; width: 200px; border: none; background:#1c8adb; box-shadow: inset 0px 0px 0px 1px #708090; font: 15px latobold;color:#fff;border-radius:5px;}
+.formulario-footer-padrao-4 button:hover{ background:rgb(32, 87, 128);}
+
+::-webkit-input-placeholder{ color: #000; font: 12px latobold}
+:placeholder-shown{ color: #000; font: 12px latobold}
+:-ms-input-placeholder{ color: #000; font: 12px latobold}
+.input-login{box-shadow: inset 0px 0px 0px 3px 	#fff !important; }
+
+.input-login::-webkit-input-placeholder{ color: #fff; font: 12px latobold}
+.input-login:placeholder-shown{ color: #fff; font: 12px latobold}
+.input-login:-ms-input-placeholder{ color: #fff; font: 12px latobold}
+
+.engloba-botoes{float: left; height: 42px; width: 400px;}
+.engloba-botoes-2{float: left; height: 42px; width: 400px;margin:0 0 20px 0;}
+.engloba-login{width:100%;float:left;text-align:center;}
+
+.div-login{width: 100%;height:100%;text-align: center;float: left;background:url(../img/login/fundo-login.png)no-repeat center top;}
+.botao-login{display:inline-block;float:none !important; box-shadow: inset 0px 0px 0px 1px #fff !important;}
+.logo-login{width:100px;height:100px;display:inline-block;background:url(../img/menu/logo.png)no-repeat center top;background-size:100%;margin:20px 0 20px 0;border-radius: 60px;border: 1px solid #fff;}
+.logo-login:hover{box-shadow: 0px 0px 20px 5px #fff;}
+
+.conteudo-4 .formulario-footer-padrao-3 {width: 620px;margin: 25px 0 0 0;}
+.conteudo-4 .formulario-footer-padrao-3 input{margin: 10px 25px 0 0;}
+.qtd{width: 125px !important;}
+.botao-ponto{width:40px !important;height:40px !important;float:left !important;background:url(../img/ponto-venda/pesquisa.png)no-repeat center top !important;background-size:100% !important;border-radius:30px !important;margin: 10px 0;}
+.botao-ponto:hover{box-shadow:0px 0px 0px 3px #1e2024;}
+/*footer*/
+.copy-sole{width: 100%; float: left; background: #000; height: 47px; color: #fff}
+.copy-sole p{ font: 11px latoregular;}
+.c1{float: left; margin: 16px 0px; width: 50%; text-align: center;}
+.c2{float: left; margin: 16px 0px; width: 50%; text-align: center;}
+.c2 i{ color: #fff}
+
+.div-paginas{display:none;}
+
+@media(max-width:1250px){
+	.vetor-1{margin: 10px 10px;}
+	.vetor-2{margin: 10px 10px;}
+	.vetor-3{margin: 10px 10px;}
+	.vetor-4{margin: 10px 10px;}
+}
+@media(max-width:1050px){
+	.vetor-1{margin: 10px 0px;}
+	.vetor-2{margin: 10px 0px;}
+	.vetor-3{margin: 10px 0px;}
+	.vetor-4{margin: 10px 0px;}
+}
+
+@media(max-width:990px){
+	.c1{ width: 100%; margin: 15px 0px 0;}
+    .c2{ width: 100%; margin: 20px 0px;}
+    .copy-sole{ height: auto;}
+    .copy-sole p{ font: 10px latoregular}
+	::i-block-chrome, .sole-vetor{ font-size: 1px; padding: 21px 30px 4px 30px;}
+	.formulario-footer-padrao-3 { width: 96%; margin: 20px 2%;}
+    .formulario-footer-padrao-3 input { margin: 0 0px 18px 0; padding: 0 0 0 3%; width: 97%;}
+    .formulario-footer-padrao-3 textarea { margin: 0 0px 18px 0; padding: 10px 0 0 3%; width: 97%;}
+	 .formulario-footer-padrao-3 button {width:50%;}
+	.engloba-botoes{width:100%;}
+	
+	.conteudo-1{width:100%;}
+	.conteudo-2{width:100%;}
+	.conteudo-3{width:100%;}
+	.conteudo-4{width:100%;}
+	.menu-lateral{display:none;}
+
+	.div-paginas{width: 106%;margin: 7px 0 0 -4%;height: auto;display: none;float:left;border-radius:0;}
+    .div-paginas a{font:15px latobold;background: #ececec;margin: 0;width: 90%;padding: 2% 5%;float:left;box-shadow:none;text-align: left;height:20px;}
+    .div-paginas a:hover{color:#fff;background:#1c8adb;box-shadow:none;}
+    .botoes-menu{width:106%;margin:0 0 0 -3%;}
+    .botao-menu{width: 40px;height: 40px;background: url(../img/menu/icon-menu.png) no-repeat center top;margin: 29px 5% 0 0;cursor:pointer;background-size: 40px;float: right;}
+	.ativo{color:#fff;background:#1c8adb !important;}	
+	.seletor-img{width: 88% !important;}
+	.conteudo-4 .formulario-footer-padrao-3 input{display: inline-block;float: none;margin: 10px 0 0 0;}
+	.botao-ponto{display: inline-block !important;float: none !important;}
+	.conteudo-4 .formulario-footer-padrao-3{width:100%;}
+}
