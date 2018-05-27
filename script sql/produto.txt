@@ -1,0 +1,14 @@
+CREATE TABLE `produto` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `cdbarras` varchar(100) DEFAULT NULL,
+  `nomeproduto` varchar(100) DEFAULT NULL,
+  `segmento` varchar(100) DEFAULT NULL,
+  `categoria` varchar(100) DEFAULT NULL,
+  `pccusto` decimal(6,2) DEFAULT NULL,
+  `mgvenda` varchar(100) DEFAULT NULL,
+  `pcvenda` decimal(6,2) DEFAULT NULL,
+  `estoque` decimal(6,2) DEFAULT NULL,
+  `dtcadastro` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+

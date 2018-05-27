@@ -1,0 +1,14 @@
+CREATE TABLE `cliente` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(255) NOT NULL,
+  `sobrenome` varchar(255) NOT NULL,
+  `fone` varchar(255) NOT NULL,
+  `cep` varchar(255) NOT NULL,
+  `rua` varchar(255) NOT NULL,
+  `numero` varchar(255) DEFAULT NULL,
+  `bairro` varchar(255) NOT NULL,
+  `cidade` varchar(255) NOT NULL,
+  `uf` varchar(2) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+

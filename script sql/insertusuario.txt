@@ -1,0 +1,3 @@
+id	login	senha	nivel
+9	admin	21232f297a57a5a743894a0e4a801fc3	ADM
+10	nadmin	8b54b33a3270b160e67f08c1d1a68e3b	USER
