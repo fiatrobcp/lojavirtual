@@ -64,7 +64,7 @@
                 var script = document.createElement('script');
 
                 //Sincroniza com o callback.
-                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+                script.src = 'https://viacep.com.br/ws/'+ cep + '/json/unicode/?callback=meu_callback';
 
                 //Insere script no documento e carrega o conteúdo.
                 document.body.appendChild(script);
@@ -130,6 +130,7 @@
 </div>
 
 </body>
+<!-- começa o php !-->
 <?php
 include ('config.php');
 if(@$_REQUEST['botao'] == "Salvar")
@@ -160,4 +161,5 @@ $result=mysqli_query($con,$query);
 }
 
 ?>
+<!-- fim do php !-->
 </html>
