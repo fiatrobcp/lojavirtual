@@ -9,6 +9,8 @@ CREATE TABLE `produto` (
   `pcvenda` decimal(6,2) DEFAULT NULL,
   `estoque` decimal(6,2) DEFAULT NULL,
   `dtcadastro` varchar(20) DEFAULT NULL,
+  `filename` varchar(255) DEFAULT NULL,
+  `lastupdate` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 

@@ -9,6 +9,7 @@ CREATE TABLE `cliente` (
   `bairro` varchar(255) NOT NULL,
   `cidade` varchar(255) NOT NULL,
   `uf` varchar(2) NOT NULL,
+  `lastupdate` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 
