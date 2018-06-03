@@ -66,7 +66,8 @@ if(@$_REQUEST['botao'] == "Salvar")
     $pcvenda = @$_POST['pcvenda'];
     $estoque = @$_POST['estoque'];
 	$dtcadastro =@$_POST['dtcadastro'];
-	$lastupdate = $_SESSION["nome_usuario"];
+    $lastupdate = $_SESSION["nome_usuario"];
+    $id = $_REQUEST['id'];
 
     // echo $nome;
     // echo $sbnome;
@@ -78,9 +79,26 @@ if(@$_REQUEST['botao'] == "Salvar")
     // echo $cidade;
     // echo $uf;
     
-$query= "INSERT INTO produto (cdbarras,nomeproduto,segmento,categoria,pccusto,mgvenda,pcvenda,estoque,dtcadastro,lastupdate)values('$cdbarras','$nomeproduto','$segmento','$categoria','$pccusto','$mgvenda','$pcvenda','$estoque','$dtcadastro','$lastupdate')";
+//$query= "INSERT INTO produto (cdbarras,nomeproduto,segmento,categoria,pccusto,mgvenda,pcvenda,estoque,dtcadastro,lastupdate)values('$cdbarras','$nomeproduto','$segmento','$categoria','$pccusto','$mgvenda','$pcvenda','$estoque','$dtcadastro','$lastupdate')";
+$query = "UPDATE produto 
+SET 
+cdbarras='$cdbarras', 
+nomeproduto='$nomeproduto', 
+segmento ='$segmento',
+categoria='$categoria',
+pccusto=$pccusto,
+mgvenda='$mgvenda',
+pcvenda=$pcvenda,
+estoque=$estoque,
+lastupdate='$lastupdate' 
+where id=$id";
+
+echo $query;
 $result=mysqli_query($con,$query);
 echo $result;
+
+
+
 }
 
 ?>

@@ -127,6 +127,7 @@
 			$cidade = @$_POST['cidade'];
 			$cidade = removeAcentos($cidade);
 			$uf = @$_POST['uf'];
+			$lastupdate = $_SESSION["nome_usuario"];
 		
 			// echo $nome;
 			// echo $sbnome;
@@ -138,7 +139,7 @@
 			// echo $cidade;
 			// echo $uf;
 
-		$query= "INSERT INTO cliente (nome,sobrenome,fone,cep,rua,numero,bairro,cidade,uf) values('$nome','$sbnome','$fone','$cep','$rua','$numero','$bairro','$cidade','$uf')";
+		$query= "INSERT INTO cliente (nome,sobrenome,fone,cep,rua,numero,bairro,cidade,uf,lastupdate) values('$nome','$sbnome','$fone','$cep','$rua','$numero','$bairro','$cidade','$uf','$lastupdate')";
 		$result=mysqli_query($con,$query);
 		
 		}

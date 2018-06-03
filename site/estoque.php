@@ -84,7 +84,7 @@ require('verifica.php');
       <th width="12%"><?php echo $coluna['estoque']; ?></th>
     <td>
         <a 
-            href="cadastroproduto.php?pag=cadastrar&id=<?php echo $coluna['id']; ?>"
+            href="atualizaproduto.php?pag=atualizar&id=<?php echo $coluna['id']; ?>"
             >editar</a>
         </td>
 
