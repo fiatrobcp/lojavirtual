@@ -8,60 +8,58 @@
 	  <link rel="stylesheet" href="css/boot.css">
 	  <link rel="stylesheet" href="css/fonts.css"> 
 	  <script src="js/jquery.js"></script>  
-</head>
+	</head>
 <?php
 
 include ('config.php');
 include ('remover_acentos.php');
 require('verifica.php');
 ?>
-<!-- <div class="conteudo-3 off">
-			<table class="table-estoque">
-  <tr>
-	<th>Imagem</th>
-    <th>Código de Barras</th>
-    <th>Nome</th>
-    <th>Preço</th>
-	<th>Quantidade em estoque</th>
-  </tr>
-    <tr>
-	<td class="img-produto"></td>
-    <td><p>01</p></td>
-    <td><p>IPHONE</p></td>
-    <td><p>smartphone</p></td>
-	<td><p>30</p></td>
-  </tr>
-</table>
-
-            </div> -->
-
-
-
-
 <?php //if (@$_REQUEST['botao'] == "Gerar") { ?>
-
-<div class="conteudo-3 off">
-			<table >
-<tr class="table-estoque">
-    
-	<th>ID</th>
-    <th>Código de Barras</th>
-    <th>Nome</th>
-    <th>Preço</th>
-    <th>Quantidade em estoque</th>
-    <th></th>
-  </tr>
+	<body>
+		<?php include 'header.php'?>
+		<main>
+			<?php include 'menu-lateral.php'?>
+			
+			<div class="conteudo-3 off">
+			<form action="estoque.php?botao=gerar" method="post" name="form1">
+			<table width="95%" border="1" align="center">
+ 			 <tr>
+    			<td colspan=5 align="center">Estoque</td>
+  			</tr>
+			  <tr>
+    				<td width="18%" align="right">Código de Barras:</td>
+    				<td width="26%"><input type="text" name="cdbarras"  /></td>
+    				<td width="17%" align="right">Nome:</td>
+    				<td width="18%"><input type="text" name="nomeproduto"/></td>
+    				<td width="21%"><input type="submit" name="botao" value="Gerar" /></td>
+  				</tr>
+			</table>
+			</form>
+				<table  class="table-estoque">
+					<tr>
+						<th>ID</th>
+						<th>Código de Barras</th>
+						<th>Nome</th>
+						<th>Preço</th>
+						<th>Quantidade em estoque</th>
+						<th></th>
+					</tr>
+			</div>
 <?php
 
-	
-	
+if (@$_REQUEST['botao'] == "Gerar") {
+	$cdbarras = @$_POST['cdbarras'];
+	$nomeproduto = @$_POST['nomeproduto'];
 	$query = "SELECT *
 			  FROM produto 
 			  WHERE id > 0 ";
-	//$query .= ($login ? " AND login LIKE '%$login%' " : "");
-	//$query .= ($nivel ? " AND nivel = '$nivel' " : "");
-	//$query .= " ORDER by id";
+	$query .= ($cdbarras ? " AND cdbarras LIKE '%$cdbarras%' " : "");
+	$query .= ($nomeproduto ? " AND nomeproduto LIKE '%$nomeproduto%' " : "");
+	$query .= " ORDER by id";
 	$result = mysqli_query($con,$query);
+	
+	//echo $query;
 
 /*	
 	echo "<pre>";
@@ -74,30 +72,28 @@ require('verifica.php');
 	{
 		
 	?>
-    
-    <tr class="img-produto">
-      
-      <th width="5%"><?php echo $coluna['id']; ?></th>
-      <th width="30%"><?php echo $coluna['cdbarras']; ?></th>
-      <th width="15%"><?php echo $coluna['nomeproduto']; ?></th>
-      <th width="12%"><?php echo $coluna['pcvenda']; ?></th>
-      <th width="12%"><?php echo $coluna['estoque']; ?></th>
-    <td>
-        <a 
-            href="atualizaproduto.php?pag=atualizar&id=<?php echo $coluna['id']; ?>"
-            >editar</a>
-        </td>
+   
 
+    <tr>
+      <td width="1%"><?php echo $coluna['id']; ?></td>
+      <td width="1%"><?php echo $coluna['cdbarras']; ?></td>
+      <td width="1%"><?php echo $coluna['nomeproduto']; ?></td>
+      <td width="1%"><?php echo $coluna['pcvenda']; ?></td>
+      <td width="1%"><?php echo $coluna['estoque']; ?></td>
+	  <td width="1%">
+	     <a href="atualizaproduto.php?pag=atualiza&id=<?php echo $coluna['id']; ?>">editar</a>
+      </td>
     </tr>
+	
 
     <?php
 	
 	} // fim while
 ?>
-</table>
+				</table>
 <?php	
-//}
+}
 ?>
-
-</body>
-</hmtl>
+		</main>
+	</body>
+</html>

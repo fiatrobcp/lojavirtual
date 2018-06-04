@@ -17,7 +17,8 @@
 					<div class="logo-login"></div>
 						<input type="hidden" name="email" class="input-login">
 						<input type="text" name="login" placeholder="Username" required="required" id ="login"  class="input-login">
-						<input type="password" name="senha" placeholder="Password" required="required" id ="senha"  class="input-login">				
+						<input type="password" name="senha" placeholder="Password" required="required" id ="senha"  class="input-login">
+							<a class="criar-conta" href="http://localhost/lojavirtual/site/cadastrarusuario.php">CRIAR UMA CONTA</a>
 						<div class="engloba-botoes-2">
 							<button class="botao-login" type="submit" value="Login" name="botao">Login</button>
 						</div>

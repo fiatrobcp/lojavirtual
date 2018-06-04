@@ -36,6 +36,45 @@ if ($uploadOk == 0) {
 // if everything is ok, try to upload file
 } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        $cdbarras = @$_POST['cdbarras'];
+        $nomeproduto = @$_POST['nomeproduto'];
+        $segmento = @$_POST['segmento'];
+        $categoria = @$_POST['categoria'];
+        $pccusto = @$_POST['pccusto'];
+        $mgvenda = @$_POST['mgvenda'];
+        $pcvenda = @$_POST['pcvenda'];
+        $estoque = @$_POST['estoque'];
+        $dtcadastro =@$_POST['dtcadastro'];
+        $lastupdate = $_SESSION["nome_usuario"];
+        //$file_name = $_FILES['image']['name'];
+        $id = $_REQUEST['id'];
+    
+        // echo $nome;
+        // echo $sbnome;
+        // echo $fone;
+        // echo $cep;
+        // echo $rua;
+        // echo $numero;
+        // echo $bairro;
+        // echo $cidade;
+        // echo $uf;
+        //echo $file_name;
+        
+        //$query= "INSERT INTO produto (cdbarras,nomeproduto,segmento,categoria,pccusto,mgvenda,pcvenda,estoque,dtcadastro)values('$cdbarras','$nomeproduto','$segmento','$categoria','$pccusto','$mgvenda','$pcvenda','$estoque','$dtcadastro')";
+        $query = "UPDATE produto 
+        SET 
+        cdbarras='$cdbarras', 
+        nomeproduto='$nomeproduto', 
+        segmento ='$segmento',
+        categoria='$categoria',
+        pccusto=$pccusto,
+        mgvenda='$mgvenda',
+        pcvenda=$pcvenda,
+        estoque=$estoque,
+        lastupdate='$lastupdate' 
+        where id=$id";
+        //echo $query;
+        $result=mysqli_query($con,$query);
         echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
     } else {
         echo "Sorry, there was an error uploading your file.";
