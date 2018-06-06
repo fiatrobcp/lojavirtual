@@ -22,19 +22,14 @@ require('verifica.php');
 			<?php include 'menu-lateral.php'?>
 			
 			<div class="conteudo-3 off">
-			<form action="estoque.php?botao=gerar" method="post" name="form1">
-			<table width="95%" border="1" align="center">
- 			 <tr>
-    			<td colspan=5 align="center">Estoque</td>
-  			</tr>
-			  <tr>
-    				<td width="18%" align="right">Código de Barras:</td>
-    				<td width="26%"><input type="text" name="cdbarras"  /></td>
-    				<td width="17%" align="right">Nome:</td>
-    				<td width="18%"><input type="text" name="nomeproduto"/></td>
-    				<td width="21%"><input type="submit" name="botao" value="Gerar" /></td>
-  				</tr>
-			</table>
+			<div class="engloba-input-estoque">
+				<div class="conteudo-center-970">
+					<form action="estoque.php?botao=gerar" method="post" name="form1" class="formulario-footer-padrao-3">
+						<div class="titulo-input"><p>Código de barras:</p></div>
+						<input type="text" name="cdbarras"/>
+						<div class="titulo-input"><p>Nome:</p></div>
+						<input type="text" name="nomeproduto"/>
+						<button type="submit" name="botao" value="Gerar" >Gerar</button>
 			</form>
 				<table  class="table-estoque">
 					<tr>
@@ -43,8 +38,11 @@ require('verifica.php');
 						<th>Nome</th>
 						<th>Preço</th>
 						<th>Quantidade em estoque</th>
+						<th>Imagem</th>
 						<th></th>
 					</tr>
+				</div>
+			</div>
 			</div>
 <?php
 
@@ -80,9 +78,8 @@ if (@$_REQUEST['botao'] == "Gerar") {
       <td width="1%"><?php echo $coluna['nomeproduto']; ?></td>
       <td width="1%"><?php echo $coluna['pcvenda']; ?></td>
       <td width="1%"><?php echo $coluna['estoque']; ?></td>
-	  <td width="1%">
-	     <a href="atualizaproduto.php?pag=atualiza&id=<?php echo $coluna['id']; ?>">editar</a>
-      </td>
+	   <td width="1%"><img src="./uploads/<?php echo $coluna['filename']; ?>" class="img-up"></td>
+	  <td width="1%"><a href="atualizaproduto.php?&id=<?php echo $coluna['id']; ?>"><button class="botao-editar">EDITAR</button></a></td>	  
     </tr>
 	
 
@@ -95,5 +92,17 @@ if (@$_REQUEST['botao'] == "Gerar") {
 }
 ?>
 		</main>
-	</body>
+		   <script>
+            $(window).ready(function () {
+                $(".botao-menu").click(function () {
+                    $(".div-paginas").slideToggle();
+                });
+                if (screen.width <= 990) {
+                    $(".div-paginas a").click(function () {
+                        $(".div-paginas").slideToggle();
+                    });
+                }
+            });
+        </script>
+	</body>	
 </html>

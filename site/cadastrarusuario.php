@@ -21,14 +21,14 @@ $id = @$_REQUEST['id'];
 
 if (@$_REQUEST['botao'] == "Excluir") {
 		$query_excluir = "
-			DELETE FROM usuario WHERE id='$id'
+			DELETE FROM usuario WHERE login= '{$_POST['login']}'
 		";
 		$result_excluir = mysqli_query($con,$query_excluir);
 		
-		if ($result_excluir) echo "<h2> Registro excluido com sucesso!!!</h2>";
-		else echo "<h2> Nao consegui excluir!!!</h2>";
+		if ($result_excluir) echo "<script>alert('Registro excluido com sucesso!!!');</script>";
+		else echo "<script>alert('Nao consegui excluir!!!');</script>";
 
-		echo "Excluir - $query_excluir";
+		"Excluir - $query_excluir";
 }
 
 if (@$_REQUEST['id'] and !@$_REQUEST['botao'])
@@ -47,14 +47,16 @@ if (@$_REQUEST['id'] and !@$_REQUEST['botao'])
 
 if (@$_REQUEST['botao'] == "Gravar") 
 {
-	if (!$_REQUEST['id'])
-	{
+	if (@!$_REQUEST['id'])
+		
+		{
+		$nivel = $_POST['nivel'];
 		$senha = md5($_POST['senha']);
 		$insere = "INSERT into usuario (login, senha,nivel) VALUES ('{$_POST['login']}', '$senha', '{$_POST['nivel']}')";
 		$result_insere = mysqli_query($con,$insere);
 		
 		if ($result_insere) echo "<script>alert('Registro inserido com sucesso!!!');</script>";
-		else echo "<h2> Nao consegui inserir!!!</h2>";
+		else echo "<script>alert('Nao consegui inserir!!!');</script>";
 		
 		echo "<script>alert('Usuario inserido');</script>";
 	} else 	
@@ -68,10 +70,10 @@ if (@$_REQUEST['botao'] == "Gravar")
 				";
 		$result_update = mysqli_query($con,$insere);
 
-		if ($result_update) echo "<h2> Registro atualizado com sucesso!!!</h2>";
-		else echo "<h2> Nao consegui atualizar!!!</h2>";
+		if ($result_update) echo "<script>alert('Registro atualizado com sucesso!!!');</script>";
+		else echo "<script>alert('Nao consegui atualizar!!!');</script>";
 		
-		echo "Atualizado";
+		echo "<script>alert('Atualizado');</script>";
 	}
 }
 ?>
@@ -80,12 +82,14 @@ if (@$_REQUEST['botao'] == "Gravar")
 				<form action="cadastrarusuario.php" method="post" name="cadastrar"  class="formulario-footer-padrao-4">
 					<div class="logo-login"></div>
 					<input type="text" name="login" value="<?php echo @$_POST['login']; ?>" placeholder="Login"  class="input-login">
-					<input type="text" name="senha" value="<?php echo @$_POST['senha']; ?>" placeholder="Senha"  class="input-login">
-					<input type="text" name="nivel" value="<?php echo @$_POST['nivel']; ?>" placeholder="Nível"  class="input-login">
+					<input type="password" name="senha" value="<?php echo @$_POST['senha']; ?>" placeholder="Senha"  class="input-login">
+					
+					<select name="nivel"  style="float:left;width:90%;margin: 0 16px 18px 5%;">
+							<option value="ADM">ADM</option> 
+							<option value="USER" selected>USER</option>
+					</select>
 					<button type="submit" value="Gravar" name="botao">Gravar</button>
 					<button type="submit" value="Excluir" name="botao">Excluir</button>
-					<button onclick="javascript:window.location.href='menu.php">Voltar</button>
-					<button type="reset" value="Novo" name="novo">Novo</button><input type="hidden" name="id" value="<?php echo @$_REQUEST['id'] ?>">
 				</form>
 			</div>
 		</div>

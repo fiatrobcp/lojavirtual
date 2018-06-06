@@ -48,7 +48,7 @@ foreach( $row as $key => $value )
                     <input type="text" name="dtcadastro" readonly  value="<?php echo date("d/m/Y"); ?>" id="dtcadastro">
                     
                     <div class="vetor-seletor"></div>
-                    <input type="file" name="fileToUpload" id="fileToUpload" required="required">								
+                    <input type="file" name="fileToUpload" id="fileToUpload" required="required" class="seletor-arq">								
                     <div class="engloba-botoes">
                     <button type="submit" name="botao" value="Salvar" >Salvar</button>
                         <button>Cancelar</button>
@@ -57,6 +57,19 @@ foreach( $row as $key => $value )
             </div>
         </div>
     </main>
+	<?php include 'footer.php'?>
+		   <script>
+            $(window).ready(function () {
+                $(".botao-menu").click(function () {
+                    $(".div-paginas").slideToggle();
+                });
+                if (screen.width <= 990) {
+                    $(".div-paginas a").click(function () {
+                        $(".div-paginas").slideToggle();
+                    });
+                }
+            });
+        </script>
 </body>
 </html>
 

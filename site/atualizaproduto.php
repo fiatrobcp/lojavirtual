@@ -48,7 +48,7 @@ foreach( $row as $key => $value )
                     <input type="text" name="dtcadastro" readonly  value="<?php echo date("d/m/Y"); ?>" id="dtcadastro">
                     
                     <div class="vetor-seletor"></div>
-                    <input type="file" name="fileToUpload" id="fileToUpload" value="<?php echo @$_POST['filename']; ?>">								
+                    <input type="file" name="fileToUpload" id="fileToUpload"  class="seletor-arq">								
                     <div class="engloba-botoes">
                     <button type="submit" name="botao" value="Salvar" >Salvar</button>
                         <button>Cancelar</button>
@@ -57,6 +57,18 @@ foreach( $row as $key => $value )
             </div>
         </div>
     </main>
+	   <script>
+            $(window).ready(function () {
+                $(".botao-menu").click(function () {
+                    $(".div-paginas").slideToggle();
+                });
+                if (screen.width <= 990) {
+                    $(".div-paginas a").click(function () {
+                        $(".div-paginas").slideToggle();
+                    });
+                }
+            });
+        </script>
 </body>
 </html>
 
@@ -64,9 +76,13 @@ foreach( $row as $key => $value )
 include ('config.php');
     
 if(@$_REQUEST['botao'] == "Salvar")
-{
-    if(@$fileToUpload== null)
-    {$cdbarras = @$_POST['cdbarras'];
+{	
+	@$file_name = basename( @$_FILES["fileToUpload"]["name"]);
+    
+	if($file_name == null)
+		
+    {	echo "Entrou No file";
+		$cdbarras = @$_POST['cdbarras'];
         $nomeproduto = @$_POST['nomeproduto'];
         $segmento = @$_POST['segmento'];
         $categoria = @$_POST['categoria'];
@@ -93,7 +109,7 @@ if(@$_REQUEST['botao'] == "Salvar")
         $result=mysqli_query($con,$query);
         ?>
         <script>
-        alert("Produto atualizado com sucesso!");
+        alert("2Produto atualizado com sucesso!");
         window.location.href ="estoque.php";
         </script>
         <?php
@@ -108,7 +124,7 @@ if(@$_REQUEST['botao'] == "Salvar")
     $uploadOk = 1;
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
-    //if(isset($_POST["submit"])) {
+    if(isset($_POST["submit"])) {
         $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
         if($check !== false) {
             //echo "File is an image - " . $check["mime"] . ".";
@@ -119,19 +135,34 @@ if(@$_REQUEST['botao'] == "Salvar")
         }
     }
     // Check if file already exists
-    if (file_exists($target_file)) {
-        echo "Sorry, file already exists.";
+    if (file_exists(@$target_file)) {
+        ?>
+		<script>
+		alert("Essa Imagem já foi utilizada, favor escolher outra!");
+		</script>
+		<?php
+		//echo "Sorry, file already exists.";
         $uploadOk = 0;
     }
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 50000000) {
-        echo "Sorry, your file is too large.";
+        ?>
+		<script>
+		alert("O tamanho da imagem excedeu o limite, Favor escolher outra!");
+		</script>
+		<?php
+		//echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
     // Allow certain file formats
-    if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-    && $imageFileType != "gif" ) {
-        echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    if(@$imageFileType != "jpg" && @$imageFileType != "png" && @$imageFileType != "jpeg"
+    && @$imageFileType != "gif" ) {
+         ?>
+		<script>
+		alert("A extensão da imagem não é suportada!");
+		</script>
+		<?php
+		
         $uploadOk = 0;
     }
     // Check if $uploadOk is set to 0 by an error
@@ -140,7 +171,9 @@ if(@$_REQUEST['botao'] == "Salvar")
     // if everything is ok, try to upload file
     } else {
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            $cdbarras = @$_POST['cdbarras'];
+            echo "aqui";
+			
+			$cdbarras = @$_POST['cdbarras'];
             $nomeproduto = @$_POST['nomeproduto'];
             $segmento = @$_POST['segmento'];
             $categoria = @$_POST['categoria'];
@@ -188,10 +221,16 @@ if(@$_REQUEST['botao'] == "Salvar")
             </script>
             <?php
         } else {
-            echo "Sorry, there was an error uploading your file.";
+			 ?>
+            <script>
+            alert("Desculpe, Tivemos um problema ao atualizar seu produto!");
+            //window.location.href ="estoque.php";
+            </script>
+            <?php
+            //echo "Sorry, there was an error uploading your file.";
         }
     }
 
-}
+}}
 
 ?>

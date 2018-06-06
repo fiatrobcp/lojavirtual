@@ -111,6 +111,19 @@
 					</div>
 				</div>
 		</main>
+		<?php include 'footer.php'?>
+		   <script>
+            $(window).ready(function () {
+                $(".botao-menu").click(function () {
+                    $(".div-paginas").slideToggle();
+                });
+                if (screen.width <= 990) {
+                    $(".div-paginas a").click(function () {
+                        $(".div-paginas").slideToggle();
+                    });
+                }
+            });
+        </script>
 	</body>
 </html>
     <?php

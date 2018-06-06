@@ -18,7 +18,7 @@
 						<input type="hidden" name="email" class="input-login">
 						<input type="text" name="login" placeholder="Username" required="required" id ="login"  class="input-login">
 						<input type="password" name="senha" placeholder="Password" required="required" id ="senha"  class="input-login">
-							<a class="criar-conta" href="http://localhost/lojavirtual/site/cadastrarusuario.php">CRIAR UMA CONTA</a>
+							<a class="criar-conta" href="./cadastrarusuario.php">CRIAR UMA CONTA</a>
 						<div class="engloba-botoes-2">
 							<button class="botao-login" type="submit" value="Login" name="botao">Login</button>
 						</div>
@@ -26,15 +26,8 @@
 			</div>
 		</div>
 		</div>
+		<?php include 'footer.php'?>
 	</body>
-	<footer>
-		<div class="copy-sole">
-			<div class="conteudo-center-970">
-				<p class="c1">© 2018 |  DOM BOSCO | Todos os Direitos Reservados</p>
-				<p class="c2"><b class="desenvolvido">Desenvolvido </b>by <i>Jeferson & Robson</i></a></p>
-			</div>
-		</div>
-	</footer>
 	<?php
 include ('config.php');
 session_start(); // inicia a sessao	

@@ -1,18 +1,18 @@
 		<div class="menu-lateral">
-				<a class="seletor s1" href="http://localhost/lojavirtual/site/cadastrocliente.php">
+				<a class="seletor s1" href="./cadastrocliente.php">
 					<div class="vetor-1"></div>
 					<p>CADASTRO</p>
 				</a>
-				<a class="seletor s2" href="http://localhost/lojavirtual/site/cadastroproduto.php">
+				<a class="seletor s2" href="./cadastroproduto.php">
 					<div class="vetor-2"></div>
 					<p>CADASTRO DE PRODUTOS</p>
 				</a>
-				<a class="seletor s3" href="http://localhost/lojavirtual/site/estoque.php">
+				<a class="seletor s3" href="./estoque.php">
 					<div class="vetor-3"></div>
 					<p>ESTOQUE</p>
 				</a>
-				<a class="seletor s4" href="">
+				<a class="seletor s4" href="./logout.php">
 					<div class="vetor-4"></div>
-					<p>PONTO DE VENDA</p>
+					<p>LOGOUT</p>
 				</a>
 			</div>
