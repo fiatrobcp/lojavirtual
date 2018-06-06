@@ -24,7 +24,7 @@
 
 
 .table-estoque{font-family:latoregular;width: 90%;margin: 30px 0 30px 5%}
-.table-estoque td, th {border: 1px solid #000;text-align:center;}
+.table-estoque td, th {border: 1px solid #000;text-align:center;position: relative;}
 .table-estoque th{font-family:latobold;text-align:center;background:#636973;color:#fff;border:1px solid #000;}
 .table-estoque tr:nth-child(even) { background-color: #a0c6e2}
 .table-estoque p{padding: 21px 15px;text-align: center;}
@@ -33,7 +33,7 @@
 .vetor-seletor{width:30px;height:30px;float:left;background:url(../img/cadastro-produto/vetor-seletor.png)no-repeat center top;background-size:100%;}
 
 
-.formulario-footer-padrao-3 {width: 400px;display:inline-block;margin: 100px 0;overflow: auto}
+.formulario-footer-padrao-3 {width: 400px;display:inline-block;margin: 90px 0;overflow: auto}
 .formulario-footer-padrao-3 input{-webkit-appearance: none;float: left; margin: 0 16px 18px 0; padding: 0 0 0 10px; color: #000; height: 37px; width: 398px; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb;border-radius:5px;}
 .formulario-footer-padrao-3 textarea{-webkit-appearance: none;overflow: hidden; float: left; margin: 0 16px 18px 0; padding: 10px 0 0 10px; color: #000; height: 27px; width: 398px; border: none; background: transparent; box-shadow: inset 0px 0px 0px 1px 	#1c8adb !important;}
 .formulario-footer-padrao-3 button{ float: left; height: 42px; width: 200px; border: none; background:#1c8adb; box-shadow: inset 0px 0px 0px 1px #708090; font: 15px latobold;color:#fff;border-radius:5px;}
@@ -84,6 +84,17 @@
 .cadastro-user{width:100%;height:100%;float:left;text-align:center;background:url(../img/login/fundo-login.png)no-repeat center top;}
 .cadastro-user .formulario-footer-padrao-3 button {margin: 10px 0 0 0;}
 .criar-conta{width:100%;float:left;font:15px latobold;margin:0 0 10px 0;color:#fff;}
+
+.engloba-input-estoque{text-align:center;}
+.seletor-arq{width: 354px !important;margin: 5px 0 20px 11px !important;box-shadow: none !important;}
+.engloba-input-estoque .formulario-footer-padrao-3{width:70%;margin: 100px 0 30px 0;}
+.engloba-input-estoque .formulario-footer-padrao-3 input{width: 200px;float: left;margin: 5px 13px 0 0;}
+.engloba-input-estoque .formulario-footer-padrao-3 button{width: 10%;border-radius: 30px;}
+.titulo-input{float:left;font:14px latobold;margin: 13px 8px 0 0;}
+
+.img-up{width:70px;height:70px;background-size:100%;}
+.botao-editar{width: 63px;height: 40px;background:#1c8adb;border: 0;border-radius: 11px;color:#fff;    position: absolute;top: 25%;right: 10%;}
+.table-estoque p{}
 @media(max-width:1250px){
 	.vetor-1{margin: 10px 10px;}
 	.vetor-2{margin: 10px 10px;}
@@ -125,4 +136,6 @@
 	.conteudo-4 .formulario-footer-padrao-3 input{display: inline-block;float: none;margin: 10px 0 0 0;}
 	.botao-ponto{display: inline-block !important;float: none !important;}
 	.conteudo-4 .formulario-footer-padrao-3{width:100%;}
+	
+	.seletor-arq{width: 80% !important;}
 }
